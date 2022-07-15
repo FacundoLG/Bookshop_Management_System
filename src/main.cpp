@@ -2,12 +2,12 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-
+#include<cstring>
 using std::string;
 
 class Shop {
     private:
-        Book book[1];
+        Book book[20];
         string Name;
         string BooksDataLocation;
     public:
@@ -18,14 +18,24 @@ class Shop {
         void GetBooksData(){
             std::ifstream file;
             file.open(BooksDataLocation.c_str());
-            if (file.fail())
+            if (file.fail()){
                 std::cout<< "Error opening file" << std::endl;
                 return;
-
+            }
             string line;
-            int bookCount;
+            int bookCount = 0;
             while(getline(file,line)){
+                if(bookCount == 0){
+                    bookCount ++;
+                    continue;
+                }
+               /*  
+                Book * book = new Book[bookCount];
+               */                       
                 std::cout << line << std::endl;
+
+
+
                 bookCount++;
             }
             file.close();
