@@ -1,0 +1,3 @@
+NAME,AUTHOR,PUBLICATION,STOCK,SALES
+Comedia,Dante Aligheri,1310,10,0
+El Sabueso de los Baskerville,Arthur Conan Doyle, 1902,30,10

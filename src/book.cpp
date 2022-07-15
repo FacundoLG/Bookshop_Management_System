@@ -3,15 +3,20 @@
 #include<string>
 using std::string;
 
+Book::Book(){};
 Book::Book(string name,string author,int publicationData,int stock, int sales) {
     Book::Name = name;
     Book::Author = author;
     Book::Stock = stock;
     Book::Sales = sales;
 }
-void Book::GetBookData () {
-    std::cout << Name << " - " << Author << std::endl;
-    std::cout << "Stock: " << Stock << std::endl;
+void Book::GetBookData (bool isLast = false) {
+    std::cout << "+----------------------------------" << std::endl;
+    std::cout << "| " << Name << " - " << Author << std::endl;
+    std::cout << "| " << "Stock: " << Stock << std::endl;
+    if(isLast){
+    std::cout << "+----------------------------------" << std::endl;
+    }
 }
 
 void Book::AddNewStock(int newStock) {
