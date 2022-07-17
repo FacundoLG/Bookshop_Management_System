@@ -1,19 +1,24 @@
+#pragma once
+#include<iostream>
 #include <string>
+
 using std::string;
+
 class Book {
     private:
         string Name;
         string Author;
+        string ID; 
         int PublicationDate;
         int Stock;
         int Sales;
-    
     public:
-        Book(string name,string author,int publicationData,int stock, int sales);
-        void GetBookData ();
+        Book();
+        Book(string name,string author,int publicationData,int stock, int sales,string id);
+        void GetBookData (bool isLast);
         void AddNewStock(int newStock);
-        void RemoveStock(int quantity = 1);
+        void RemoveStock(int quantity);
         void SetStock(int stock);
-        void Sell(int quantity = 1);
+        void Sell(int quantity);
         void SetSales(int sales);
 };
