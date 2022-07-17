@@ -4,16 +4,19 @@
 using std::string;
 
 Book::Book(){};
-Book::Book(string name,string author,int publicationData,int stock, int sales) {
+Book::Book(string name,string author,int publicationData,int stock, int sales, string id) {
     Book::Name = name;
     Book::Author = author;
     Book::Stock = stock;
     Book::Sales = sales;
+    Book::ID = id;
 }
 void Book::GetBookData (bool isLast = false) {
     std::cout << "+----------------------------------" << std::endl;
-    std::cout << "| " << Name << " - " << Author << std::endl;
+    std::cout << "| " << "Book: " << Name << std::endl;
+    std::cout << "| " << "Author: " << Author << std::endl;
     std::cout << "| " << "Stock: " << Stock << std::endl;
+    std::cout << "| " << "ID:" << ID << std::endl;
     if(isLast){
     std::cout << "+----------------------------------" << std::endl;
     }
