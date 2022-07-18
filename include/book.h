@@ -15,10 +15,13 @@ class Book {
     public:
         Book();
         Book(string name,string author,int publicationData,int stock, int sales,string id);
-        void GetBookData (bool isLast);
+        void PrintBookData();
+        void PrintEnd();
         void AddNewStock(int newStock);
         void RemoveStock(int quantity);
         void SetStock(int stock);
         void Sell(int quantity);
         void SetSales(int sales);
+        string GetName();
+        string GetAuthor();
 };
