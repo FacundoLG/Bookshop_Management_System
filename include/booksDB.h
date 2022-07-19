@@ -8,7 +8,6 @@ class BooksDB {
         string URL;
     public:
         BooksDB(string url);
-        void CreateDB(bool force);
         Book * GetBooks(string input);
         void AddBook(Book book);
         void RemoveBook(Book book);               
