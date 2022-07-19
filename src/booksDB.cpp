@@ -32,6 +32,7 @@ BooksDB::BooksDB(string url){
 Book * BooksDB::GetBooks(string input){
 
 };
+
 void BooksDB::AddBook(Book book){
         std::fstream db;
         db.open(URL,std::ios::app);
