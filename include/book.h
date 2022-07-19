@@ -22,6 +22,10 @@ class Book {
         void SetStock(int stock);
         void Sell(int quantity);
         void SetSales(int sales);
-        string GetName();
-        string GetAuthor();
+        string gName();
+        string gAuthor();
+        int gPublicationDate();
+        int gStock();
+        int gSales();
+        string gID();
 };

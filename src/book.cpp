@@ -4,8 +4,9 @@
 using std::string;
 
 Book::Book(){};
-Book::Book(string name,string author,int publicationData,int stock, int sales, string id) {
+Book::Book(string name,string author,int publicationDate,int stock, int sales, string id) {
     Book::Name = name;
+    Book::PublicationDate = publicationDate;
     Book::Author = author;
     Book::Stock = stock;
     Book::Sales = sales;
@@ -31,9 +32,22 @@ void Book::SetSales(int sales) {
     Sales = sales;
 }
 
-string Book::GetName(){
+string Book::gName(){
     return Name;
-}
-string Book::GetAuthor(){
-    return Name;
+};
+string Book::gAuthor(){
+    return Author;
+};
+int Book::gPublicationDate(){
+    return PublicationDate;
+};
+int Book::gStock(){
+    return Stock;
+};
+int Book::gSales(){
+    return Sales;
+};
+
+string Book::gID(){
+    return ID;
 }

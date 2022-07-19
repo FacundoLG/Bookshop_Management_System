@@ -1,1 +1,24 @@
-NAME,AUTHOR,PUBLICATION,STOCK,SALES 
+NAME,AUTHOR,PUBLICATION,STOCK,SALES,ID 
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
+Book 1,Author 1,1990,100,20,1
