@@ -33,15 +33,36 @@ Book * BooksDB::GetBooks(string input){
 
 };
 
-void BooksDB::AddBook(Book book){
-        std::fstream db;
-        db.open(URL,std::ios::app);
-        if(!db.is_open()) return;
-        db << book.gName() << "," << book.gAuthor() << 
-        "," << book.gPublicationDate() << "," << book.gStock()
-        << "," << book.gSales() << "," << book.gID() << "\n"; 
+string * BooksDB::split(string str,char slicer){
+    string * data = new string[6];
+    string word = "";
+    for(auto x : str){
+        if(x == slicer){
+            data->append(word);
+            word = "";
+            continue;
+        }
+        word += x;   
+    }
+    return data;
+}
 
+void BooksDB::AddBook(Book book){
+    std::fstream db;
+    db.open(URL,std::ios::app);
+    if(!db.is_open()) return;
+    db << book.gName() << "," << book.gAuthor() << 
+    "," << book.gPublicationDate() << "," << book.gStock()
+    << "," << book.gSales() << "," << book.gID() << "\n"; 
+    db.close();
 };
 void BooksDB::RemoveBook(Book book){
-
+    std::fstream db;
+    db.open(URL,std::ios::in);
+    if(!db.is_open()) return;
+    string data;
+    while (getline(db,data)){
+        std::cout << data << std::endl;
+    }
+    db.close();
 };               
