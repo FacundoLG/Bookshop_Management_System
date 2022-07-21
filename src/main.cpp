@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<string>
+#include<array>
 
 #include"booksDB.h"
 #include"book.h"
@@ -49,7 +50,9 @@ int main() {
     terminal.Clear();
     terminal.Welcome();
     BooksDB db = BooksDB("./database.txt");
-    Book book = Book("Book 1","Author 1",1990, 100, 20, "1");    
-    db.AddBook(book);
+    Book book = Book("Book 1","Author 1",1990, 100, 20, "1");
+    string * arr = db.split("Hola como estas",' '); 
+    
+    std::cout<< arr[1] << std::endl;
     return 0; 
 }

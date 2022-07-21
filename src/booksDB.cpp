@@ -1,7 +1,11 @@
 #include"book.h"
 #include"booksDB.h"
+
+#include<vector> 
 #include<string>
 #include<fstream>
+
+#include<iostream>
 #include<ios>
 using std::string;
 
@@ -30,21 +34,33 @@ BooksDB::BooksDB(string url){
     }
 };
 Book * BooksDB::GetBooks(string input){
+    std::fstream db;
+    db.open(URL,std::ios::in);
+    Book books[100];
+    string data;
+    while(getline(db,data)){
 
+    }
 };
 
 string * BooksDB::split(string str,char slicer){
-    string * data = new string[6];
+    std::vector<string> data;
     string word = "";
+    int idx = 0;
     for(auto x : str){
-        if(x == slicer){
-            data->append(word);
+        idx++;
+        if(x == slicer || idx == str.size()){
+            if(idx == str.size()){
+             word+=x;   
+            }
+            data.push_back(word);
             word = "";
             continue;
         }
-        word += x;   
+        word += x;
     }
-    return data;
+    string * arr = &data[data.size()+1];
+    return arr;
 }
 
 void BooksDB::AddBook(Book book){
