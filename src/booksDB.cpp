@@ -59,12 +59,20 @@ string * BooksDB::split(string str,char slicer){
 Book * BooksDB::GetBooks(string input){
     std::fstream db;
     db.open(URL,std::ios::in);
-    Book * books;
+    std::vector<Book> books;
     string data;
+    bool isFirsLine = true;
     while(getline(db,data)){
       string * book = split(data,',');
-      std::cout << book[0] << std::endl;
+      if(isFirsLine){
+        isFirsLine = false;
+        continue;
+      }
+      books.push_back(Book(book[0],book[1],std::stoi(book[2]),std::stoi(book[3]),std::stoi(book[4]),book[5]));
     }
+    Book * BooksArr = new Book[books.size()];
+    std::copy(books.begin(),books.end(),BooksArr);
+    return BooksArr;
 };
 void BooksDB::AddBook(Book book){
     std::fstream db;

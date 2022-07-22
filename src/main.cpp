@@ -26,6 +26,7 @@ class Terminal {
         }
     public:
         Terminal(){
+            //Get terminal size
             ioctl(STDOUT_FILENO,TIOCGWINSZ, &w);
         }
         void Clear() {
@@ -43,6 +44,10 @@ class Terminal {
             }
             line_with_edges();
         }
+        void PrintBooks(BooksDB db){
+           Book * books = db.GetBooks("");
+           //hmm
+        }
 };
 Terminal terminal = Terminal();
 
@@ -51,6 +56,6 @@ int main() {
     terminal.Welcome();
     BooksDB db = BooksDB("./database.txt");
     Book book = Book("Book 1","Author 1",1990, 100, 20, "1");
-    db.GetBooks("");
+    terminal.PrintBooks(db);
     return 0; 
 }
