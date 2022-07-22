@@ -51,8 +51,6 @@ int main() {
     terminal.Welcome();
     BooksDB db = BooksDB("./database.txt");
     Book book = Book("Book 1","Author 1",1990, 100, 20, "1");
-    string * arr = db.split("Hola como estas",' '); 
-    
-    std::cout<< arr[1] << std::endl;
+    db.GetBooks("");
     return 0; 
 }
